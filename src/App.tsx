@@ -284,17 +284,24 @@ function App() {
                   <div className="w-full text-center">
                     {currentState === "q0" ? (
                       <p>
-                        Por favor inserte su tarjeta para iniciar la
+                        Por favor, inserte su tarjeta para iniciar la
                         transacción.
                       </p>
                     ) : currentState === "q18" ? (
                       <p>Transacción cancelada.</p>
                     ) : currentState === "q17" ? (
                       <p>Transacción exitosa.</p>
-                    ) : currentState === "q1" ? (
+                    ) : currentState === "q2" ? (
+                      <p>Contraseña incorrecta.</p>
+                    ) : +currentState.substring(1) >= 1 &&
+                      +currentState.substring(1) < 7 ? (
                       <p>Por favor ingrese su contraseña.</p>
+                    ) : currentState === "q8" ? (
+                      <p>Retiro fallido.</p>
                     ) : (
-                      <p>Por favor ingrese el monto a retirar.</p>
+                      +currentState.substring(1) >= 7 && (
+                        <p>Por favor ingrese el monto a retirar.</p>
+                      )
                     )}
                   </div>
                   <input
