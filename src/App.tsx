@@ -48,7 +48,7 @@ const afd: IAFD = {
     "tarjeta",
   ],
   initialState: "q0",
-  acceptingStates: ["q18"],
+  acceptingStates: ["q18", "q17"],
   transitions: {
     q0: { tarjeta: "q1" },
     q1: {
